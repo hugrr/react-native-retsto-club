@@ -51,7 +51,7 @@ const NavigationStacks = createBottomTabNavigator(
         )
       })
     },
-    Account: {
+    MyAccount: {
       screen: AccountScreenStacks,
       navigationOptions: () => ({
         tabBarLabel: "Cuenta",
@@ -67,8 +67,8 @@ const NavigationStacks = createBottomTabNavigator(
     }
   },
   {
-    initialRouteName: "Account",
-    order: ["Restaurants", "TopList", "Search", "Account"],
+    initialRouteName: "MyAccount",
+    order: ["Restaurants", "TopList", "Search", "MyAccount"],
     tabBarOptions: {
       inactiveTintColor: "#646464",
       activeTintColor: "#00a680"

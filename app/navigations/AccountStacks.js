@@ -4,7 +4,7 @@ import LoginScreen from "../screens/Account/Login";
 import RegisterScreen from "../screens/Account/Register";
 
 const AccountScreenStacks = createStackNavigator({
-  Restaurants: {
+  MyAccount: {
     screen: MyAccountScreen,
     navigationOptions: () => ({
       title: " Mi Cuenta"
