@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { ListItem } from "react-native-elements";
+import Modal from "../Modal";
+import ChangeDisplayNameForm from "./ChangeDisplayNameForm";
+import ChangeEmailForm from "./ChangeEmailForm";
+import ChangePasswordForm from "./ChangePasswordForm";
 
-export default function AccountOptions() {
+export default function AccountOptions(props) {
+  const { userInfo, setReloadData, toastRef } = props;
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
+  const [renderComponent, setRenderComponent] = useState(null);
+
   const menuOptions = [
     {
       title: "Cambiar Nombre y Apellidos",
@@ -11,7 +19,7 @@ export default function AccountOptions() {
       iconColorLeft: "#ccc",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => console.log("Change displayName")
+      onPress: () => selectedComponent("displayName")
     },
     {
       title: "Cambiar Email",
@@ -20,7 +28,7 @@ export default function AccountOptions() {
       iconColorLeft: "#ccc",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => console.log("Change Email")
+      onPress: () => selectedComponent("email")
     },
     {
       title: "Cambiar password",
@@ -29,9 +37,47 @@ export default function AccountOptions() {
       iconColorLeft: "#ccc",
       iconNameRight: "chevron-right",
       iconColorRight: "#ccc",
-      onPress: () => console.log("Change Password")
+      onPress: () => selectedComponent("password")
     }
   ];
+
+  const selectedComponent = Key => {
+    switch (Key) {
+      case "displayName":
+        setRenderComponent(
+          <ChangeDisplayNameForm
+            displayName={userInfo.displayName}
+            setIsVisibleModal={setIsVisibleModal}
+            setReloadData={setReloadData}
+            toastRef={toastRef}
+          />
+        );
+        setIsVisibleModal(true);
+        break;
+      case "email":
+        setRenderComponent(
+          <ChangeEmailForm
+            email={userInfo.email}
+            setIsVisibleModal={setIsVisibleModal}
+            setReloadData={setReloadData}
+            toastRef={toastRef}
+          />
+        );
+        setIsVisibleModal(true);
+        break;
+      case "password":
+        setRenderComponent(
+          <ChangePasswordForm
+            setIsVisibleModal={setIsVisibleModal}
+            toastRef={toastRef}
+          />
+        );
+        setIsVisibleModal(true);
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <View>
       {menuOptions.map((menu, index) => (
@@ -52,6 +98,11 @@ export default function AccountOptions() {
           containerStyle={styles.menuItem}
         />
       ))}
+      {renderComponent && (
+        <Modal isVisible={isVisibleModal} setIsVisible={setIsVisibleModal}>
+          {renderComponent}
+        </Modal>
+      )}
     </View>
   );
 }

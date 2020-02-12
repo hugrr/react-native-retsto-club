@@ -2671,7 +2671,7 @@ expo-linear-gradient@~8.0.0:
   resolved "https://registry.yarnpkg.com/expo-linear-gradient/-/expo-linear-gradient-8.0.0.tgz#972d33e92714d4a4485635683b5bfa357ecec41b"
   integrity sha512-5G3ePGAHUoyBWbGITw5RtdJpssH8TXhCgt55cV+5LTTFjr51OZcuOmGua1vRoVFKBC/9ibLW465GEx9H/HS07Q==
 
-expo-location@~8.0.0:
+expo-location@^8.0.0, expo-location@~8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/expo-location/-/expo-location-8.0.0.tgz#58dd54e47b12e26f9f2a97ded3cd15f8fa959b85"
   integrity sha512-48i4dUCaqPTwSri79yummKwg6vE6loI7d4iHCrbG4EEuN3fhS8I9xU60CEkoNZTziH9zK0iw4KSjr7DbXUAaCw==
@@ -4916,6 +4916,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-action-button@^2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/react-native-action-button/-/react-native-action-button-2.8.5.tgz#4152a50323a8a6b3468e6f161f9a9071f2f0739a"
+  integrity sha512-BvGZpzuGeuFR2Y6j93+vKiSqDhsF87VHvNXFs/qEYKfzT4b1ASAT/GQbgS6gNt4jRJCUnJWYrIwlBzRjesZQmQ==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-easy-toast@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-native-easy-toast/-/react-native-easy-toast-1.2.0.tgz#0f70bcb99e3306cda4800c244bfb4a67d42276ed"
@@ -4959,6 +4966,11 @@ react-native-keyboard-aware-scroll-view@^0.9.1:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-maps@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.26.1.tgz#6ec316259b38d259c8974448d894bd7a23101da4"
+  integrity sha512-p4VTB8YB5ZmOmDRCUpoHZkm05amZwhIo04AJMBbB9+JAR2PNNfpo0vceoWX0Mag4wnePkdzPomeWMplr/wimTg==
 
 react-native-ratings@^6.3.0:
   version "6.5.0"
